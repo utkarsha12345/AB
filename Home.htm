@@ -1,0 +1,215 @@
+<html>
+<head>
+<title>
+Home
+</title>
+<link rel="stylesheet" type = "text/css" href = "home.css" media = " all" >
+
+<script>
+function menDrop() { 
+    if (document.activeElement.id == "men"){
+    var disp = document.getElementById("menopt").style.display;
+    if(disp == "block"){
+    document.getElementById("menopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }else{
+    document.getElementById("menopt").style.display = "block";
+    }
+    }
+    else if(document.activeElement.className == "activever"){
+    document.getElementById("menopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }
+}
+
+function womenDrop() { 
+    if (document.activeElement.id == "women"){
+    var disp = document.getElementById("womenopt").style.display;
+    if(disp == "block"){
+    document.getElementById("womenopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }else{
+    document.getElementById("womenopt").style.display = "block";
+    }
+    }
+    else if(document.activeElement.className == "activever"){
+    document.getElementById("womenopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }
+}
+
+function kidDrop() { 
+    if (document.activeElement.id == "kid"){
+    var disp = document.getElementById("kidopt").style.display;
+    if(disp == "block"){
+    document.getElementById("kidopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }else{
+    document.getElementById("kidopt").style.display = "block";
+    }
+    }
+    else if(document.activeElement.className == "activever"){
+    document.getElementById("kidopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }
+}
+
+function appDrop() { 
+    if (document.activeElement.id == "app"){
+    var disp = document.getElementById("appopt").style.display;
+    if(disp == "block"){
+    document.getElementById("appopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }else{
+    document.getElementById("appopt").style.display = "block";
+    }
+    }
+    else if(document.activeElement.className == "activever"){
+    document.getElementById("appopt").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }
+}
+
+function elecDrop() { 
+    if (document.activeElement.id == "electronics"){
+    var disp = document.getElementById("elec").style.display;
+    if(disp == "block"){
+    document.getElementById("elec").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }else{
+    document.getElementById("elec").style.display = "block";
+    }
+    }
+    else if(document.activeElement.className == "activever"){
+    document.getElementById("elec").style.display = "none";
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    }
+}
+
+function changeActive(){
+    if (document.activeElement.className == "subverli"){
+    var x = document.getElementsByClassName("subactivever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "subverli";
+    }
+    if (document.activeElement.className == "subverli"){
+    document.activeElement.className = "subactivever";
+    }
+    return 1;
+    }
+    var x = document.getElementsByClassName("activever");
+    var i;
+    for (i = 0; i < x.length; i++) {
+    x[i].className = "verli";
+    }
+    if (document.activeElement.className == "verli"){
+    document.activeElement.className = "activever";
+    }
+
+}
+</script>
+
+</head>
+
+<body  >
+<form action="disp.php" method="post"  enctype="multipart/form-data">
+
+<iframe style="border:none;float:right;height:100%;width:88.5%;margin-left:-0.6%;margin-top:-1.3%;" src="home/clothes.htm" name="hframe"></iframe>
+
+<ul class="verul" onclick = "changeActive(); menDrop(); elecDrop(); womenDrop(); kidDrop(); appDrop();">
+
+  <li><a class="activever" href="home/men/men.htm" id="men" target="hframe">Men</a></li>
+  <div style="display: none;" id="menopt" name="menopt">
+  <li><a href="add/mcloth.php" class="subverli" target="hframe">Clothing</a></li>
+  <li><a href="#" class="subverli">Footwear</a></li>
+  <li><a href="#" class="subverli">Watches</a></li>
+  <li><a href="#" class="subverli">Accessories</a></li>
+  <li><a href="#" class="subverli">Grooming Products</a></li>
+  </div>
+
+  <li><a class="verli" href="home/women/women.htm" id="women" target="hframe">Women</a></li>
+  <div style="display: none;" id="womenopt" name="womenopt">
+  <li><a href="#" class="subverli">Clothing</a></li>
+  <li><a href="#" class="subverli">Footwear</a></li>
+  <li><a href="#" class="subverli">Watches</a></li>
+  <li><a href="#" class="subverli">Accessories</a></li>
+  <li><a href="#" class="subverli">Jewellery</a></li>
+  <li><a href="#" class="subverli">Grooming Products</a></li>
+  </div>
+
+  <li><a class="verli" href="home/Kids/kids.htm" id="kid" target="hframe">Kids and Babies</a></li>
+  <div style="display: none;" id="kidopt" name="kidopt">
+  <li><a href="#" class="subverli">Clothing</a></li>
+  <li><a href="#" class="subverli">Footwear</a></li>
+  <li><a href="#" class="subverli">Watches</a></li>
+  <li><a href="#" class="subverli">Accessories</a></li>
+  <li><a href="#" class="subverli">Toys</a></li>
+  <li><a href="#" class="subverli">Baby Care</a></li>
+  </div>
+
+  
+
+  <li><a class="verli" href="home/electronics/electronics.htm" id="electronics" target="hframe">Electronics</a></li>
+  <div style="display: none;" id="elec" name="elec">
+  <li><a href="#" class="subverli">Mobiles</a></li>
+  <li><a href="#" class="subverli">Mobile Accessories</a></li>
+  <li><a href="#" class="subverli">Laptops</a></li>
+  <li><a href="#" class="subverli">Computer Accessories</a></li>
+  <li><a href="#" class="subverli">Cameras</a></li>
+  </div>
+
+  <li><a class="verli" href="home/appliances/appliances.htm" id="app" target="hframe">Appliances</a></li>
+  <div style="display: none;" id="appopt" name="appopt">
+  <li><a href="#" class="subverli">Televisions</a></li>
+  <li><a href="#" class="subverli">Air Conditioners</a></li>
+  <li><a href="#" class="subverli">Refrigerators</a></li>
+  <li><a href="#" class="subverli">Washing Machines</a></li>
+  <li><a href="#" class="subverli">Kitchen</a></li>
+  </div>
+
+</ul>
+
+</form>
+</body>
+</html>

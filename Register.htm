@@ -1,0 +1,124 @@
+
+<html>
+<head>
+<script type="text/javascript">
+   <!--
+      function vemail()
+      {
+         var emailID = document.regform.email.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 )) 
+         {
+            alert("Please enter correct email ID")
+            document.regform.email.focus() ;
+            return false;
+         }
+       return true;
+      }
+   
+      function vphone()             
+      { 
+         var phoneNum = document.regform.phno.value;
+        
+         if (phoneNum < 999999 || phoneNum > 1000000000000) 
+         {
+            alert("Please enter correct Phone Number")
+            document.regform.phno.focus() ;    
+            return false;
+         }
+       return true;
+      }  
+    
+      function vpass()
+      {
+         var password = document.regform.pass.value;
+         
+         if (password.length < 8) 
+         {
+            alert("Password should have at least 8 characters")
+            document.regform.pass.focus() ;
+            return false;
+         }
+      return true; 
+      }
+
+      function vcpass()
+      {
+         var password = document.regform.pass.value;  
+         var cpassword = document.regform.cpass.value;
+         if (!(password == cpassword)) 
+         {
+            alert("Passwords do not match")
+            document.regform.pass.focus() ; 
+            return false;
+         }
+         return( true );
+      }
+
+     
+   //-->
+
+</script>
+
+<title>
+Register
+</title>
+<link rel="stylesheet" type = "text/css" href = "styles2.css" media = " all" >
+</head>
+   
+
+<body>
+
+<h1 style="position:absolute; left:38%; top:13%;">
+Register
+</h1>
+
+<font style="position:absolute; left:15%; top:50%;" class="bgtext1"> RICH </font>
+
+<font style="position:absolute; left:50%; top:50%;" class="bgtext2"> KART </font>
+
+
+<form action="reg.php" method="post" name="regform" id="regform" autocomplete="on">
+
+<div style="position:absolute; left:18%; top:50%;">
+<label class="uptext">Username: </label>
+<input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+</div>
+
+<div style="position:absolute; left:18%; top:60%;">
+<label class="uptext">Password: </label>
+<input type="password" placeholder="Enter Password" name="pass" id="pass" required min="8" onchange="vpass()">
+</div>
+
+<div style="position:absolute; left:18%; top:70%;">
+<label class="uptext">Confirm Password: </label>
+<input type="password" placeholder="Re-Enter Password" name="cpass" id="cpass" required style="margin-left:0px;" onchange="vcpass()">
+</div>
+
+<div style="position:absolute; left:51%; top:50%;">
+<label class="uptext" align="top">Address: </label>
+<textarea rows="5" cols="40" name="address" id="address" placeholder="Enter address here..." required>
+</textarea>
+</div>
+
+<div style="position:absolute; left:53%; top:71%;">
+<label class="uptext" style="font-size:15px;" >Phone No:</label>
+<input type="text" placeholder="Enter Phone Number" name="phno" id="phno" required style="margin-left:0px; width:150px; padding-top:2px; padding-bottom:2px;" onchange="vphone()">
+</div>
+
+<div style="position:absolute; left:70%; top:71%;">
+<label class="uptext"> <font style="font-size:15px;" >Email: </font></label>
+<input type="text" placeholder="Enter Email Address" name="email" id="email" required style="margin-left:0px; width:150px; padding-top:2px; padding-bottom:2px;" onchange="vemail()">
+</div>
+<button type="submit" value="submit" style="position:absolute; left:45%; top:83%;"> Submit Details </button>
+
+
+</form>
+ 
+
+</body>
+
+
+</html>
